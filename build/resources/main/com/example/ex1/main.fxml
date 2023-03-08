@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ex1.MainController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="214.0">
+         <children>
+            <Label fx:id="accName" alignment="CENTER" layoutX="24.0" layoutY="14.0" prefHeight="27.0" prefWidth="166.0" text="Label" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutY="567.0" mnemonicParsing="false" onAction="#logOut" prefHeight="39.0" prefWidth="214.0" text="Log out">
+               <effect>
+                  <Blend />
+               </effect>
+            </Button>
+            <Button fx:id="BtnPrieteni" layoutY="75.0" mnemonicParsing="false" onAction="#openFriends" prefHeight="39.0" prefWidth="214.0" style="-fx-background-color: transparent;" text="Prieteni">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="button_B" layoutY="177.0" mnemonicParsing="false" onAction="#openMsg" prefHeight="39.0" prefWidth="214.0" style="-fx-background-color: transparent;" text="Mesaje">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="214.0" prefHeight="600.0" prefWidth="686.0">
+         <children>
+            <Pane fx:id="friendPane" prefHeight="600.0" prefWidth="686.0">
+               <children>
+                  <TableView fx:id="reqTable" prefHeight="345.0" prefWidth="374.0">
+                    <columns>
+                      <TableColumn fx:id="reqNumeColumn" prefWidth="72.0" text="Nume" />
+                        <TableColumn fx:id="reqPrenumeColumn" prefWidth="78.0" text="Prenume" />
+                      <TableColumn fx:id="reqStatusColumn" minWidth="0.0" prefWidth="73.0" text="Status" />
+                        <TableColumn fx:id="reqDataColumn" prefWidth="148.0" text="Data" />
+                        <TableColumn fx:id="reqEmailColumn" prefWidth="52.0" text="Email" visible="false" />
+                    </columns>
+                  </TableView>
+                  <TableView fx:id="friendTable" layoutX="505.0" prefHeight="345.0" prefWidth="182.0">
+                    <columns>
+                      <TableColumn fx:id="friendNumeColumn" prefWidth="88.0" text="Nume" />
+                      <TableColumn fx:id="friendPrenumeColumn" prefWidth="85.0" text="Prenume" />
+                        <TableColumn fx:id="friendEmailColumn" prefWidth="88.0" text="Email" visible="false" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="374.0" layoutY="320.0" mnemonicParsing="false" onAction="#acceptRequest" prefHeight="25.0" prefWidth="33.0" text="✔" textFill="#30c922" />
+                  <Button layoutX="374.0" layoutY="295.0" mnemonicParsing="false" onAction="#declineRequest" prefHeight="25.0" prefWidth="33.0" text="✖" textFill="RED" />
+                  <Button layoutX="472.0" layoutY="320.0" mnemonicParsing="false" onAction="#deleteFriend" prefHeight="25.0" prefWidth="33.0" text="✖" textFill="RED" />
+                  <TextField fx:id="searchFriendsBar" layoutX="505.0" layoutY="352.0" onInputMethodTextChanged="#searchFriends" prefHeight="25.0" prefWidth="182.0" promptText="Search for friends..." />
+                  <TableView fx:id="searchPeopleTable" layoutY="388.0" prefHeight="198.0" prefWidth="374.0">
+                     <columns>
+                        <TableColumn fx:id="searchNumeColumn" prefWidth="67.0" text="Nume" />
+                        <TableColumn fx:id="searchPrenumeColumn" prefWidth="73.0" text="Prenume" />
+                        <TableColumn fx:id="searchEmailColumn" prefWidth="230.0" text="Email" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="searchPeopleBar" layoutY="352.0" onInputMethodTextChanged="#searchFriends" prefHeight="25.0" prefWidth="182.0" promptText="Search for people..." />
+                  <Button layoutX="187.0" layoutY="352.0" mnemonicParsing="false" onAction="#sendFriendRequest" prefHeight="25.0" prefWidth="44.0" text="Send" />
+                  <TableView fx:id="sentRequestsTable" layoutX="505.0" layoutY="388.0" prefHeight="198.0" prefWidth="182.0">
+                     <columns>
+                        <TableColumn fx:id="sentReqNumeColumn" prefWidth="88.0" text="Nume" />
+                        <TableColumn fx:id="sentReqPrenumeColumn" prefWidth="85.0" text="Prenume" />
+                        <TableColumn fx:id="sentReqEmailColumn" prefWidth="88.0" text="Email" visible="false" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="cancelRequestBtn" layoutX="472.0" layoutY="561.0" mnemonicParsing="false" onAction="#deleteSentRequest" prefHeight="25.0" prefWidth="33.0" text="✖" textFill="RED" />
+               </children>
+            </Pane>
+            <Pane fx:id="msgPane" layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="686.0" visible="false" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

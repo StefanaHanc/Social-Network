@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="311.0" prefWidth="559.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ex1.LogInController">
+   <children>
+      <Button layoutX="39.0" layoutY="227.0" mnemonicParsing="false" onAction="#logIn" text="Log in">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="428.0" layoutY="227.0" mnemonicParsing="false" onAction="#signUp" text="Sign up">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <VBox layoutX="39.0" layoutY="27.0" prefHeight="200.0" prefWidth="483.0">
+         <children>
+            <Label text="Email">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="logInEmail">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <Label text="Password">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="logInPw">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </PasswordField>
+         </children>
+      </VBox>
+      <Label fx:id="eroare" alignment="CENTER" contentDisplay="CENTER" layoutX="202.0" layoutY="232.0" text="haha" textAlignment="CENTER" textFill="RED" visible="false">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
